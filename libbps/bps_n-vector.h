@@ -18,8 +18,8 @@
    02110-1301, USA.
 */
 
-#ifndef BPS_VECTOR_H
-#define BPS_VECTOR_H
+#ifndef BPS_N_VECTOR_H
+#define BPS_N_VECTOR_H
 
 #include <vector>
 #include <cmath>
@@ -200,8 +200,7 @@ namespace bps {
   template<class T, int n>
   bool operator==(const Vector<T, n>& v, const Vector<T, n>& w) {
     for (int i = 0; i < n; i++)
-      if (v[i] != w[i])
-        return false;
+      if (v[i] != w[i]) return false;
     return true;
   }
 
@@ -212,11 +211,14 @@ namespace bps {
   
   template<class T, int n>
   std::ostream& operator<<(std::ostream& os, const Vector<T, n>& v) {
-    for (int i = 0; i < n; i++)
-      os << v[i];
-    return os;
+    os << "Vector(";
+    for (int i = 0; i < n; i++) {
+     os << v[i];
+     if (i < n-1) os << ", ";
+    }
+    return os << ")";
   }
 
 } // namesapce bps
 
-#endif // BPS_VECTOR_H
+#endif // BPS_N_VECTOR_H

@@ -208,7 +208,7 @@ namespace bps {
   bool operator!=(const Vector<T, n>& v, const Vector<T, n>& w) {
     return !(v == w);
   }
-  
+
   template<class T, int n>
   std::ostream& operator<<(std::ostream& os, const Vector<T, n>& v) {
     os << "Vector(";

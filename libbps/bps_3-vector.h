@@ -60,6 +60,12 @@ namespace bps {
       inline ThreeVector& setY(double _y) { x[1] = _y; return *this; }
       inline ThreeVector& setZ(double _z) { x[2] = _z; return *this; }
 
+      // norm
+      ThreeVector normalized() const {
+        ThreeVector v = ThreeVector(x[0], x[1], x[2]);
+        return v.normalize();
+      }
+
       // rotation
       ThreeVector& rotate(const ThreeVector& axis, const double angle);
   };

@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
 
 Vector<double, 3> u,v,w;
 ThreeVector a = ThreeVector(1,0,0);
-ThreeVector b = ThreeVector(0,1,0);
+ThreeVector b = ThreeVector(0,0,1);
 
 v[0] = 1;
 v[1] = 2;
@@ -18,6 +18,6 @@ v[2] = 3;
 w = v;
 u = (v + w);
 
-cout << a[0];
+cout << a.rotate(b, 3.14);
 
 }

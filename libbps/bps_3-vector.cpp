@@ -18,23 +18,25 @@
    02110-1301, USA.
 */
 
-#include <ostream>
+#include <cmath>
 
 #include "bps_3-vector.h"
+#include "bps_quaternion.h"
 
 namespace bps {
 
-  /*Vector& Vector::rotate(const Vector& axis, const double angle) {
-    Vector n = axis.normalized();
+  ThreeVector& ThreeVector::rotate(const ThreeVector& axis,
+                                   const double angle) {
+    ThreeVector n = axis.normalized();
     Quaternion q = Quaternion(std::cos(angle/2), std::sin(angle/2)*n);
 
-    Quaternion p1 = Quaternion(0,x,y,z);
+    Quaternion p1 = Quaternion(0,x[0],x[1],x[2]);
     Quaternion p2 = q*p1*q.conjugated();
 
-    x = p2.getIm1();
-    y = p2.getIm2();
-    z = p2.getIm3();
+    x[0] = p2.getIm1();
+    x[1] = p2.getIm2();
+    x[2] = p2.getIm3();
     return *this;
-  }*/
+  }
 
 } // namespace bps

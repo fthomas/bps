@@ -1,6 +1,6 @@
 /*
    BPS - Basic Particle Simulations
-   Copyright (C) 2005  Frank S. Thomas
+   Copyright (C) 2005, 2006  Frank S. Thomas
 
    This program is free software; you can redistribute it and/or
    modify it under the terms of the GNU General Public License
@@ -20,8 +20,7 @@
 
 #include <ostream>
 
-#include "bps_vector.h"
-//#include "bps_quaternion.h"
+#include "bps_3-vector.h"
 
 namespace bps {
 
@@ -37,15 +36,5 @@ namespace bps {
     z = p2.getIm3();
     return *this;
   }*/
-
-  template<class T, int n>
-  std::ostream& operator<<(std::ostream& os, const Vector<T, n>& v) {
-    for (int i = 0; i < n; i ++)
-        os << v[i];
-    return os;
-    /*return os << "Vector(" << v.getX() << ", "
-                           << v.getY() << ", "
-                           << v.getZ() << ")";*/
-  }
 
 } // namespace bps

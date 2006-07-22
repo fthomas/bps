@@ -36,11 +36,26 @@ namespace bps {
         x[2] = _z;
       }
 
+      template<class T, int n>
+      inline ThreeVector(const Vector<T, n>& v) {
+        int m = std::min(size(), n);
+        for (int i = 0; i < m; i++)
+          x[i] = v[i];
+      }
+
+      template<class T, int n>
+      inline ThreeVector& operator=(const Vector<T, n>& v) {
+        int m = std::min(size(), n);
+        for (int i = 0; i < m; i++)
+          x[i] = v[i];
+        return *this;
+      }
+
       // getter
       inline double getX() const { return x[0]; }
       inline double getY() const { return x[1]; }
       inline double getZ() const { return x[2]; }
-      
+
       // setter
       inline ThreeVector& set(ThreeVector v) {
         x[0] = v[0];
@@ -59,12 +74,6 @@ namespace bps {
       inline ThreeVector& setX(double _x) { x[0] = _x; return *this; }
       inline ThreeVector& setY(double _y) { x[1] = _y; return *this; }
       inline ThreeVector& setZ(double _z) { x[2] = _z; return *this; }
-
-      // norm
-      ThreeVector normalized() const {
-        ThreeVector v = ThreeVector(x[0], x[1], x[2]);
-        return v.normalize();
-      }
 
       // rotation
       ThreeVector& rotate(const ThreeVector& axis, const double angle);

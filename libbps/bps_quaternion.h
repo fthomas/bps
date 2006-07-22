@@ -45,6 +45,21 @@ namespace bps {
         x[3] = im[2];
       }
 
+      template<class T, int n>
+      inline Quaternion(const Vector<T, n>& v) {
+        int m = std::min(size(), n);
+        for (int i = 0; i < m; i++)
+          x[i] = v[i];
+      }
+
+      template<class T, int n>
+      inline Quaternion& operator=(const Vector<T, n>& v) {
+        int m = std::min(size(), n);
+        for (int i = 0; i < m; i++)
+          x[i] = v[i];
+        return *this;
+      }
+
       // getter
       inline double getRe()  const { return x[0]; }
       inline double getIm1() const { return x[1]; }

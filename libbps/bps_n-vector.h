@@ -213,8 +213,8 @@ namespace bps {
   std::ostream& operator<<(std::ostream& os, const Vector<T, n>& v) {
     os << "Vector(";
     for (int i = 0; i < n; i++) {
-     os << v[i];
-     if (i < n-1) os << ", ";
+      os << v[i];
+      if (i < n-1) os << ", ";
     }
     return os << ")";
   }

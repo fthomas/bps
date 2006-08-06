@@ -4,6 +4,7 @@ PROJECT(BPS)
 SET(CMAKE_VERBOSE_MAKEFILE ON)
 
 SUBDIRS(libbps)
+SUBDIRS(mensor)
 
 # Specify directories in which to search for includes and libraries.
 INCLUDE_DIRECTORIES(BEFORE libbps)

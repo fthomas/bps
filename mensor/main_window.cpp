@@ -21,20 +21,9 @@
 #include "main_window.h"
 #include "main_window.moc"
 
-/*
-int main(int argc, char *argv[])
-{
-  QApplication app(argc, argv);
-  QMainWindow *mw = new QMainWindow;
-
-  Ui_MainWindow hello;
-  hello.setupUi(mw);
-  mw->show();
-
-  return app.exec();
-}
-*/
-
 MainWindow::MainWindow() : QMainWindow() {
+  gui.setupUi(this);
+}
 
+MainWindow::~MainWindow() {
 }

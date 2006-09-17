@@ -8,13 +8,15 @@ FIND_PACKAGE(Qt4 REQUIRED)
 # (or not).
 INCLUDE(${QT_USE_FILE})
 
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
+
 SET(mensor_SOURCES main.cpp)
 SET(mensor_HEADERS )
-
 SET(mensor_UIS mainwindow.ui)
-SET(mensor_UIS_H mainwindow.h)
 
-QT_WRAP_UI(mensor mensor_UIS_H mensor_SOURCES_CX  ${mensor_UIS})
+QT4_AUTOMOC(${mensor_SOURCES})
+QT4_WRAP_UI(mensor_UIS_H ${mensor_UIS})
+QT4_WRAP_CPP(mensor_MOC ${mensor_UIS_H})
 
-ADD_EXECUTABLE(mensor ${mensor_SOURCES})
+ADD_EXECUTABLE(mensor ${mensor_SOURCES} ${mensor_MOC})
 TARGET_LINK_LIBRARIES(mensor ${QT_LIBRARIES})

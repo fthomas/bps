@@ -10,9 +10,13 @@ INCLUDE(${QT_USE_FILE})
 
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
 
-SET(mensor_SOURCES main.cpp)
-SET(mensor_HEADERS )
-SET(mensor_UIS mainwindow.ui)
+SET(mensor_SOURCES
+    main.cpp
+    main_window.cpp
+)
+
+SET(mensor_HEADERS main_window.h)
+SET(mensor_UIS main_window.ui)
 
 QT4_AUTOMOC(${mensor_SOURCES})
 QT4_WRAP_UI(mensor_UIS_H ${mensor_UIS})

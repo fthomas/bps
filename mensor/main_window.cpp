@@ -18,15 +18,23 @@
    02110-1301, USA.
 */
 
-#include <QApplication>
-
 #include "main_window.h"
+#include "main_window.moc"
 
+/*
 int main(int argc, char *argv[])
 {
   QApplication app(argc, argv);
-  MainWindow mainWindow;
+  QMainWindow *mw = new QMainWindow;
 
-  mainWindow->show();
+  Ui_MainWindow hello;
+  hello.setupUi(mw);
+  mw->show();
+
   return app.exec();
+}
+*/
+
+MainWindow::MainWindow() : QMainWindow() {
+
 }

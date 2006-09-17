@@ -2,6 +2,8 @@
 # with an FATAL_ERROR if Qt4 is not found.
 FIND_PACKAGE(Qt4 REQUIRED)
 
+SET(QT_USE_QTOPENGL true)
+
 # Include the UseQt4.cmake file. This file sets ${QT_LIBRARIES} or adds
 # ${QT_INCLUDE_DIR} to the INCLUDE_DIRECTORIES. It looks for variables like
 # ${QT_USE_QTOPENGL} for adding e.g. OpenGL libraries to the linker invocation

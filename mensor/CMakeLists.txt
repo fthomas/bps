@@ -13,11 +13,16 @@ INCLUDE(${QT_USE_FILE})
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
 
 SET(mensor_SOURCES
+    glcanvas.cpp
     main.cpp
     main_window.cpp
 )
 
-SET(mensor_HEADERS main_window.h)
+SET(mensor_HEADERS
+    glcanvas.h
+    main_window.h
+)
+
 SET(mensor_UIS main_window.ui)
 
 QT4_AUTOMOC(${mensor_SOURCES})

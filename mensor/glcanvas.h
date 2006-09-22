@@ -18,22 +18,17 @@
    02110-1301, USA.
 */
 
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef GLCANVAS_H
+#define GLCANVAS_H
 
-#include <QMainWindow>
+#include <QGLWidget>
 
-#include "ui_main_window.h"
-
-class MainWindow : public QMainWindow {
+class GLCanvas : public QGLWidget {
   Q_OBJECT
 
   public:
-    MainWindow();
-    ~MainWindow();
-
-  private:
-    Ui::MainWindow gui;
+    GLCanvas(QWidget* parent = 0);
+    ~GLCanvas();
 };
 
-#endif // MAINWINDOW_H
+#endif // GLCANVAS_H

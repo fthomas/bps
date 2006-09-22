@@ -23,6 +23,8 @@
 
 MainWindow::MainWindow() : QMainWindow() {
   gui.setupUi(this);
+
+  //setCentralWidget(0);
 }
 
 MainWindow::~MainWindow() {

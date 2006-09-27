@@ -25,4 +25,46 @@ GLCanvas::GLCanvas(QWidget* parent) : QGLWidget(parent) {
 }
 
 GLCanvas::~GLCanvas() {
+  makeCurrent();
+}
+
+void GLCanvas::initializeGL() {
+  glClearColor(0.5, 0.5, 0.5, 0.0);
+  glEnable(GL_DEPTH_TEST);
+}
+
+void GLCanvas::resizeGL(int width, int height) {
+
+        int side = qMin(width, height);
+        glViewport((width - side) / 2, (height - side) / 2, side, side);
+
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glOrtho(-0.5, +0.5, +0.5, -0.5, 4.0, 15.0);
+        glMatrixMode(GL_MODELVIEW);
+}
+
+void GLCanvas::paintGL() {
+
+
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glLoadIdentity();
+        glTranslated(0.0, 0.0, -10.0);
+        glRotated(1. / 16.0, 1.0, 0.0, 0.0);
+        glRotated(1. / 16.0, 0.0, 1.0, 0.0);
+        glRotated(1. / 16.0, 0.0, 0.0, 1.0);
+
+    glBegin (GL_QUADS);
+      glColor3f (0.0, 0.0, 0.0); glVertex3f (0.0, 0.0, 0.0);   /* unten */
+      glColor3f (1.0, 0.0, 0.0); glVertex3f (1.0, 0.0, 0.0);
+      glColor3f (1.0, 0.0, 1.0); glVertex3f (1.0, 0.0, 1.0);
+      glColor3f (0.0, 0.0, 1.0); glVertex3f (0.0, 0.0, 1.0);
+  
+      glColor3f (0.0, 1.0, 0.0); glVertex3f (0.0, 1.0, 0.0);   /* oben */
+      glColor3f (0.0, 1.0, 1.0); glVertex3f (0.0, 1.0, 1.0);
+      glColor3f (1.0, 1.0, 1.0); glVertex3f (1.0, 1.0, 1.0);
+      glColor3f (1.0, 1.0, 0.0); glVertex3f (1.0, 1.0, 0.0);
+    glEnd ();
+
+
 }

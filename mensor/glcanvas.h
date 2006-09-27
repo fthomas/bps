@@ -29,6 +29,11 @@ class GLCanvas : public QGLWidget {
   public:
     GLCanvas(QWidget* parent = 0);
     ~GLCanvas();
+
+  protected:
+    void initializeGL();
+    void resizeGL(int width, int height);
+    void paintGL();
 };
 
 #endif // GLCANVAS_H

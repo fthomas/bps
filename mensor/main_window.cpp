@@ -23,8 +23,7 @@
 
 MainWindow::MainWindow() : QMainWindow() {
   gui.setupUi(this);
-
-  //setCentralWidget(0);
+  setCentralWidget(&glCanvas);
 }
 
 MainWindow::~MainWindow() {

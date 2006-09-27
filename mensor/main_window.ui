@@ -13,9 +13,13 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>MainWindow</string>
+   <string>Mensor</string>
   </property>
-  <widget class="QWidget" name="centralwidget" />
+  <widget class="QWidget" name="centralwidget" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
+  </widget>
   <widget class="QMenuBar" name="menubar" >
    <property name="geometry" >
     <rect>
@@ -25,28 +29,54 @@
      <height>29</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuTes2" >
+   <widget class="QMenu" name="menuHelp" >
     <property name="title" >
-     <string>tes2</string>
+     <string>&amp;Help</string>
     </property>
+    <addaction name="actionAbout_Mensor" />
    </widget>
-   <widget class="QMenu" name="menuHallo" >
+   <widget class="QMenu" name="menuFile" >
     <property name="title" >
-     <string>hallo</string>
+     <string>&amp;File</string>
     </property>
-    <addaction name="actionHallo1" />
+    <addaction name="actionQuit" />
    </widget>
-   <addaction name="menuHallo" />
-   <addaction name="menuTes2" />
+   <addaction name="menuFile" />
+   <addaction name="menuHelp" />
   </widget>
   <widget class="QStatusBar" name="statusbar" />
-  <action name="actionHallo1" >
+  <action name="actionAbout_Mensor" >
    <property name="text" >
-    <string>hallo1</string>
+    <string>About Mensor</string>
+   </property>
+  </action>
+  <action name="actionQuit" >
+   <property name="text" >
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+Q</string>
    </property>
   </action>
  </widget>
  <pixmapfunction></pixmapfunction>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionQuit</sender>
+   <signal>activated()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>273</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

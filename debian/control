@@ -1,0 +1,9 @@
+Source: bps
+Section: science
+Priority: optional
+Maintainer: Frank S. Thomas <frank@thomas-alfeld.de>
+Standards-Version: 3.7.2
+Build-Depends: debhelper (>= 5)
+
+Package: libbps0
+Architecture: all

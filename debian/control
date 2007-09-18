@@ -19,7 +19,7 @@ Depends: ${shlibs:Depends}
 Description: none
  none
 
-Package: libbps-dev
+Package: libbps0-dev
 Section: libdevel
 Architecture: all
 Depends:

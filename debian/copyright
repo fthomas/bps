@@ -1,0 +1,8 @@
+
+Files: *
+Copyright: © 2005, 2006, 2007 Frank S. Thomas <frank@thomas-alfeld.de>
+License: GPL-3+
+
+Files: debian/*
+Copyright: © 2007 Frank S. Thomas <frank@thomas-alfeld.de>
+License: GPL-3+

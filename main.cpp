@@ -20,4 +20,5 @@ ThreeVector c = b.normalized();
 cout << c;
 Quaternion p = Quaternion(1, c);
 cout << p;
+  return 0;
 }
